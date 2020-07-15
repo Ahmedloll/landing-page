@@ -1,3 +1,10 @@
+
+
+
+
+
+
+
 /**
  * 
  * Manipulating the DOM exercise.
@@ -34,7 +41,18 @@
 */
 
 // build the nav
-
+document.addEventListener(
+    "DOMContentLoaded", () => {
+        const navlist = document.querySelector( "#navbar__list" );
+        const sections = document.querySelectorAll("[data-nav]");
+        for (const i of sections) {
+            const listitem = document.createElement( "li" );
+            listitem.innerHTML = `<a href="#${i.id}" class="menu__link">${i.dataset.nav}</a>`;
+            console.log(listitem);
+            navlist.append( listitem );
+        }
+    }
+);
 
 // Add class 'active' to section when near top of viewport
 
